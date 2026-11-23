@@ -1,25 +1,17 @@
-<p align="center">
-  <img src="./assets/hero.svg" width="100%" alt="Franc Lunevro, @francLunevro. Discord bots, backend systems, and web dashboards.">
-</p>
+![Franc Lunevro (@francLunevro)](./assets/hero.svg)
 
-## About me
+I build software for Discord communities. I like the work that sits between server logic and the screen someone needs to use: permissions, records, and settings.
 
-I’m Franc. I build tools for Discord communities and enjoy working across the backend and the interface. I’m interested in permission systems, persistent workflows, and making complex settings easy to use.
+## Vigil
 
-## Stack
+Vigil is a self-hosted Discord bot with a web dashboard for moderation and support. Ticket transcripts keep the conversation available after the channel closes.
 
-<p>
-  <img src="./assets/stack.svg" width="100%" alt="Core stack: JavaScript, Node.js, discord.js, Express, SQLite, React, Vite, GitHub Actions, and Docker.">
-</p>
+![Illustration of a support ticket becoming a saved transcript.](./assets/ticket.svg)
 
-## GitHub activity
+## What I work with
 
-[![Public project commit calendar.](./assets/activity.svg)](https://github.com/francLunevro#contribution-activity)
+**Bot and API** · JavaScript, Node.js, discord.js, Express, SQLite  
+**Dashboard** · React, Vite  
+**Build and deployment** · GitHub Actions, Docker
 
-![Public project source-language breakdown.](./assets/languages.svg)
-
-[Read the chart data](./data/activity-summary.md) · [View my full contribution history](https://github.com/francLunevro#contribution-activity)
-
----
-
-[GitHub profile](https://github.com/francLunevro) · [Public repositories](https://github.com/francLunevro?tab=repositories)
+[Contribution history](https://github.com/francLunevro#contribution-activity) · [Public repositories](https://github.com/francLunevro?tab=repositories)

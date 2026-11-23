@@ -58,8 +58,10 @@ class DataTests(unittest.TestCase):
             today = date(2026, 11, 19)
             snapshot = refresh.collect_snapshot(today, "")
             self.assertIsNone(snapshot["week_start"])
-            self.assertIn("when a public project is configured", render.activity(snapshot))
-            self.assertIn("when a public project is configured", render.languages(snapshot))
+            report = render.activity_summary(snapshot)
+            self.assertIn("#contribution-activity", report)
+            self.assertNotIn("## Public project commits", report)
+            self.assertNotIn("## Languages by source bytes", report)
             with self.assertRaises(refresh.RefreshError):
                 refresh.collect_snapshot(today, "https://example.com/repo")
             api.assert_not_called()
@@ -89,7 +91,7 @@ class DataTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             output = Path(directory)
             files = refresh.build_files(SNAPSHOT)
-            self.assertEqual(len(refresh.write_files(files, output)), 6)
+            self.assertEqual(len(refresh.write_files(files, output)), 2)
             before = {path: (output / path).stat().st_mtime_ns for path in files}
             self.assertEqual(refresh.write_files(files, output), [])
             self.assertEqual(before, {path: (output / path).stat().st_mtime_ns for path in files})
@@ -107,41 +109,47 @@ class DataTests(unittest.TestCase):
 
 class SvgTests(unittest.TestCase):
     def test_cards_have_accessible_metadata_and_no_active_external_content(self):
-        cards = render.cards(SNAPSHOT)
-        self.assertEqual(len(cards), 4)
-        self.assertLess(sum(len(svg.encode()) for svg in cards.values()), 40_000)
+        cards = render.artwork()
+        self.assertEqual(len(cards), 2)
+        self.assertLess(sum(len(svg.encode()) for svg in cards.values()), 15_000)
         for path, svg in cards.items():
             with self.subTest(path=path):
                 root = ET.fromstring(svg)
-                self.assertEqual(root.attrib["width"], "720")
+                self.assertEqual(root.attrib["width"], "760")
                 self.assertTrue(root.find("svg:title", NS).text)
                 self.assertTrue(root.find("svg:desc", NS).text)
-                self.assertIn("prefers-reduced-motion:reduce", svg)
+                self.assertIn("prefers-reduced-motion: reduce", svg)
                 self.assertIsNone(re.search(r"<(?:script|foreignObject|iframe)\b|\son\w+=|url\((?!#)", svg))
 
-    def test_calendar_and_language_summary_are_consistent(self):
-        files = refresh.build_files(SNAPSHOT)
-        graph = files[Path("assets/activity.svg")]
-        table = files[Path("data/activity-summary.md")]
-        self.assertEqual(graph.count(" commits</title></rect>"), 84)
-        self.assertIn("11 commits across 2 days", graph)
-        self.assertIn("11 commits · 2 active days", table)
-        self.assertIn("| JavaScript | 900 |", table)
-        self.assertIn("Other 0.5 percent", files[Path("assets/languages.svg")])
+    def test_ticket_choreography_uses_one_shot_svg_css(self):
+        ticket = render.ticket()
+        root = ET.fromstring(ticket)
+        css = root.find("svg:style", NS).text
+        for css_class, keyframe in (("route", "trace"), ("slip", "file"), ("stamp", "ink")):
+            self.assertIsNotNone(root.find(f".//*[@class='{css_class}']"))
+            self.assertIn(f"@keyframes {keyframe}", css)
+        self.assertNotIn("infinite", css)
+        self.assertIn("animation: none !important", css)
 
-    def test_empty_window_and_language_pending_render_without_fake_totals(self):
+    def test_report_uses_real_commit_and_language_totals(self):
+        report = render.activity_summary(SNAPSHOT)
+        self.assertIn("11 commits across 2 active days", report)
+        self.assertIn("| 2026-09-04 | 10 |", report)
+        self.assertIn("| JavaScript | 900 |", report)
+
+    def test_empty_project_report_does_not_render_empty_charts(self):
         snapshot = {**SNAPSHOT, "days": {}, "languages": {}}
-        self.assertIn("0 commits across 0 days", render.activity(snapshot))
-        self.assertIn("GitHub has not reported byte totals", render.languages(snapshot))
-        self.assertIn("No commits in this window", render.activity_summary(snapshot))
+        report = render.activity_summary(snapshot)
+        self.assertIn("No commits in this window", report)
+        self.assertNotIn("Languages by source bytes", report)
 
     def test_readme_references_valid_assets_and_text_alternatives(self):
         readme = (refresh.ROOT / "README.md").read_text(encoding="utf-8")
         paths = re.findall(r"\./((?:assets|data)/[a-z.-]+)", readme)
-        self.assertEqual(len(paths), 5)
+        self.assertEqual(len(paths), 2)
         for relative in paths:
             self.assertTrue((refresh.ROOT / relative).is_file())
-        self.assertEqual(len(re.findall(r'alt="[^"]+"|!\[[^\]]+\]', readme)), 4)
+        self.assertEqual(len(re.findall(r'alt="[^"]+"|!\[[^\]]+\]', readme)), 2)
 
 
 if __name__ == "__main__":

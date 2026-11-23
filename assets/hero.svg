@@ -1,68 +1,20 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="720" height="314" viewBox="0 0 720 314" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="181" viewBox="0 0 760 181" role="img" aria-labelledby="title desc">
 <title id="title">Franc Lunevro</title>
-<desc id="desc">@francLunevro builds Discord bots, backend systems, and web dashboards.</desc>
-<defs>
-  <linearGradient id="panel" x1="0%" y1="0%" x2="100%" y2="100%">
-    <stop stop-color="#10192b"/><stop offset=".62" stop-color="#0a1020"/><stop offset="1" stop-color="#13112b"/>
-  </linearGradient>
-  <linearGradient id="signal" x1="0%" y1="100%" x2="100%" y2="0%">
-    <stop stop-color="#64dcf7"/><stop offset=".54" stop-color="#769bff"/><stop offset="1" stop-color="#bb91ff"/>
-  </linearGradient>
-  <clipPath id="bounds"><rect x="1" y="1" width="718" height="312" rx="23"/></clipPath>
-  
-    <radialGradient id="field">
-      <stop stop-color="#413ac7" stop-opacity=".4"/><stop offset="1" stop-color="#272f81" stop-opacity="0"/>
-    </radialGradient>
-    <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
-      <path d="M 24 0 H 0 V 24" fill="none" stroke="#87a6ee" stroke-opacity=".17"/>
-    </pattern>
-    <linearGradient id="fade"><stop stop-color="white" stop-opacity="0"/><stop offset="1" stop-color="white"/></linearGradient>
-    <mask id="grid-fade"><rect x="280" width="440" height="314" fill="url(#fade)"/></mask>
-    <linearGradient id="gleam">
-      <stop stop-color="white" stop-opacity="0"/><stop offset=".56" stop-color="#d5fbff" stop-opacity=".7"/><stop offset="1" stop-color="white" stop-opacity="0"/>
-    </linearGradient>
-    <mask id="word" maskUnits="userSpaceOnUse" x="33" y="132" width="352" height="88"><text x="34" y="205" font-size="75" font-weight="800" letter-spacing="-3.1" fill="white">Lunevro</text></mask>
-    
-</defs>
+<desc id="desc">GitHub profile of Franc Lunevro, @francLunevro.</desc>
 <style>
-text{font-family:Arial,Helvetica,sans-serif}
-.mono{font-family:Consolas,'Liberation Mono',monospace;letter-spacing:.045em}
-.rise{animation:rise 760ms cubic-bezier(.2,.65,.3,1) both;animation-delay:var(--delay,0ms)}
-.sweep{animation:sweep 1700ms 180ms ease-out both}
-.trace{stroke-dasharray:100;animation:trace 1600ms 200ms ease-out both}
-.reveal{transform-box:fill-box;transform-origin:left center;animation:reveal 850ms 200ms ease-out both}
-@keyframes rise{from{opacity:.15;transform:translateY(9px)}to{opacity:1;transform:translateY(0)}}
-@keyframes sweep{from{opacity:0;transform:translateX(-335px)}35%{opacity:1}to{opacity:0;transform:translateX(610px)}}
-@keyframes trace{from{stroke-dashoffset:100}to{stroke-dashoffset:0}}
-@keyframes reveal{from{opacity:.25;transform:scaleX(.02)}to{opacity:1;transform:scaleX(1)}}
-@media(prefers-reduced-motion:reduce){*{animation:none!important}.sweep{opacity:0}}
+.label { font: 24px Arial, Helvetica, sans-serif; }
+.rule { stroke-dasharray: 100; animation: rule 900ms 160ms cubic-bezier(.22,.7,.26,1) both; }
+@keyframes rule { from { stroke-dashoffset: 100; } to { stroke-dashoffset: 0; } }
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; }
+}
 </style>
-<rect x="1" y="1" width="718" height="312" rx="23" fill="url(#panel)" stroke="#2a3c5e"/>
-<g clip-path="url(#bounds)">
-
-    <ellipse cx="552" cy="149" rx="243" ry="190" fill="url(#field)"/>
-    <rect x="280" width="440" height="314" fill="url(#grid)" mask="url(#grid-fade)"/>
-    <g fill="none" stroke-width="1.4">
-      <path d="M366 158 543 55l177 103-177 103Z" stroke="#34517f"/>
-      <path d="M390 158 543 69l152 89-152 89Z" stroke="#46659c"/>
-      <path d="M417 158 543 86l126 72-126 74Z" stroke="#6085be"/>
-      <path d="M366 158h354M543 29v260M446 95l194 124M446 219l194-124" stroke="#6281bc" opacity=".37"/>
-      <path class="trace" pathLength="100" d="m390 158 153-89 152 89-152 89-153-89" stroke="url(#signal)" opacity=".85"/>
-      <path d="m438 158 105-61 104 61-104 62Z" stroke="#7196df" opacity=".6"/>
-    </g>
-    <path d="m474 141 69-40 70 40-70 40Z" fill="#233a74" stroke="#86b6ff" stroke-width="1.5"/>
-    <path d="m474 141 69 40v61l-69-40Z" fill="#14264d" stroke="#5f87d3" stroke-width="1.5"/>
-    <path d="m543 181 70-40v61l-70 40Z" fill="#28285d" stroke="#8b82e9" stroke-width="1.5"/>
-    <path d="m491 141 52-30 53 30-53 30Z" fill="#192953" stroke="url(#signal)" stroke-width="1.4"/>
-    <path d="m513 141 30-17 31 17-31 18Z" fill="#9eafff" fill-opacity=".26" stroke="#a9bcff" stroke-width="1.3"/>
-    <path d="m489 169 39 23m-39-13 28 16m-28-6 39 23m32-17 36-22m-36 32 22-13m-22 23 36-22" fill="none" stroke="#7da2ed" stroke-opacity=".55" stroke-width="2" stroke-linecap="round"/>
-    <circle cx="390" cy="158" r="3" fill="#81e6f8"/><circle cx="695" cy="158" r="3" fill="#b598ff"/>
-    <circle cx="543" cy="69" r="3.5" fill="#c0a6ff"/><circle cx="543" cy="247" r="3.5" fill="#6ddff6"/>
-    <path d="M657 46h18v18M657 265h18v-18" fill="none" stroke="#5477b1" stroke-width="1.4"/>
-    <text class="mono" x="38" y="52" font-size="17" fill="#89e6f7" font-weight="700">@FRANCLUNEVRO</text><g class="rise" style="--delay:0ms">
-    <text x="34" y="130" fill="#f1f5ff" font-size="75" font-weight="800" letter-spacing="-3.1">Franc</text>
-    <text x="34" y="205" fill="url(#signal)" font-size="75" font-weight="800" letter-spacing="-3.1">Lunevro</text>
-    <g mask="url(#word)"><rect class="sweep" x="8" y="136" width="215" height="78" fill="url(#gleam)" opacity="0"/></g>
-    </g><g class="rise" style="--delay:120ms"><text x="38" y="253" font-size="24" fill="#adbcd4" font-weight="400">Discord bots · backend systems</text></g><g class="rise" style="--delay:180ms"><text x="38" y="281" font-size="24" fill="#adbcd4" font-weight="400">Web dashboards</text></g><path d="M39 298h70" fill="none" stroke="url(#signal)" stroke-width="2" stroke-linecap="round"/>
+<path fill="#142934" d="M0 0H760V181H0z"/>
+<text class="label" x="33" y="43" fill="#bad0cb">@francLunevro</text>
+<g fill="#f3f2e9">
+  <path d="M38 0V10H51Q133 10 133 82V636Q133 704 51 704H38V714H542L548 539H538L536 572Q532 647 501.0 675.5Q470 704 394 704H234V356H485V346H234V82Q234 10 316 10H329V0ZM595 0V10H608Q652 10 671.0 28.0Q690 46 690 87V448Q690 490 671.0 508.0Q652 526 608 526H605V536H783V436H785Q792 462 806.0 487.0Q820 512 848.5 529.0Q877 546 925 546Q975 546 1001.5 526.5Q1028 507 1028 472Q1028 442 1006.5 422.0Q985 402 935 402Q935 464 914.0 487.5Q893 511 867 511Q838 511 821.0 490.5Q804 470 796.0 437.5Q788 405 786.0 370.5Q784 336 784 307V92Q784 48 803.0 29.0Q822 10 866 10H879V0ZM1240 -10Q1164 -10 1119.5 29.5Q1075 69 1075 138Q1075 215 1131.5 253.0Q1188 291 1303 295L1386 298V373Q1386 429 1380.0 465.0Q1374 501 1354.0 518.5Q1334 536 1293 536Q1235 536 1218.5 500.0Q1202 464 1202 387Q1160 387 1138.5 401.0Q1117 415 1117 447Q1117 483 1141.5 504.5Q1166 526 1207.0 536.0Q1248 546 1297 546Q1389 546 1434.5 507.0Q1480 468 1480 373V74Q1480 38 1494.0 24.0Q1508 10 1542 10H1545V0H1394V105H1392Q1376 45 1335.5 17.5Q1295 -10 1240 -10ZM1260 4Q1297 4 1325.5 23.0Q1354 42 1370.0 74.0Q1386 106 1386 143V287L1322 284Q1237 280 1204.5 245.0Q1172 210 1172 127Q1172 4 1260 4ZM1598 0V10H1606Q1653 10 1670.5 30.0Q1688 50 1688 102V436Q1688 487 1671.0 506.5Q1654 526 1608 526H1603V536H1781V442H1783Q1797 489 1822.0 511.0Q1847 533 1876.5 539.5Q1906 546 1931 546Q2020 546 2063.5 499.5Q2107 453 2107 350V102Q2107 50 2123.0 30.0Q2139 10 2182 10H2187V0H2013V384Q2013 449 1989.0 490.0Q1965 531 1906 531Q1859 531 1832.0 506.0Q1805 481 1793.5 441.5Q1782 402 1782 359V102Q1782 50 1799.0 30.0Q1816 10 1862 10H1867V0ZM2482 -10Q2414 -10 2362.0 17.5Q2310 45 2281.0 107.0Q2252 169 2252 270Q2252 373 2281.5 433.5Q2311 494 2361.0 520.0Q2411 546 2474 546Q2516 546 2556.5 535.0Q2597 524 2623.0 501.5Q2649 479 2649 442Q2649 409 2626.0 395.0Q2603 381 2560 381Q2560 461 2542.5 498.5Q2525 536 2472 536Q2436 536 2408.0 513.5Q2380 491 2364.5 433.5Q2349 376 2349 269Q2349 171 2364.0 111.5Q2379 52 2412.0 26.0Q2445 0 2497 0Q2547 0 2581.5 26.5Q2616 53 2633 125Q2654 120 2654 93Q2654 69 2635.0 45.5Q2616 22 2578.0 6.0Q2540 -10 2482 -10Z" transform="translate(29 130) scale(.073 -.073)"/>
+  <path d="M-18 0 -16 10H-3Q30 10 56.5 22.5Q83 35 93 82L211 636Q215 652 215 664Q215 690 195.0 697.0Q175 704 143 704H130L132 714H423L421 704H408Q375 704 348.5 692.5Q322 681 312 636L178 10H397Q436 10 463.5 28.0Q491 46 509.0 76.0Q527 106 537 140L559 215H569L517 0ZM1059 -10Q1019 -10 997.0 18.0Q975 46 975 85Q975 96 976.0 112.0Q977 128 979 144H976Q951 100 923.0 65.5Q895 31 860.0 11.0Q825 -9 779 -9Q720 -9 696.0 24.5Q672 58 672 102Q672 127 678.0 157.0Q684 187 690 212L736 419Q739 433 742.0 452.0Q745 471 745 479Q745 509 724.5 517.5Q704 526 675 526H667L669 536H855L789 237Q785 219 780.5 195.5Q776 172 772.5 149.5Q769 127 769 112Q769 70 781.5 45.0Q794 20 828 20Q852 20 877.5 38.0Q903 56 926.0 85.0Q949 114 965.0 145.5Q981 177 987 204L1058 536H1155L1086 215Q1084 204 1080.0 183.0Q1076 162 1073.5 140.0Q1071 118 1071 104Q1071 26 1116 26Q1133 26 1147.5 32.5Q1162 39 1181 53L1186 46Q1164 27 1130.5 8.5Q1097 -10 1059 -10ZM1647 -10Q1603 -10 1579.5 18.5Q1556 47 1556 90Q1556 136 1575 225L1592 303Q1597 323 1605.0 360.5Q1613 398 1613 429Q1613 446 1609.0 465.0Q1605 484 1591.5 498.0Q1578 512 1551 512Q1524 512 1498.5 494.0Q1473 476 1452.0 450.0Q1431 424 1417.5 400.0Q1404 376 1402 364L1324 0H1231L1322 434Q1325 448 1326.5 461.5Q1328 475 1328 479Q1328 509 1307.5 517.5Q1287 526 1258 526H1250L1252 536H1437L1410 410H1412Q1454 476 1499.0 510.5Q1544 545 1602 545Q1661 545 1685.0 511.5Q1709 478 1709 434Q1709 409 1702.5 379.5Q1696 350 1691 324L1665 206Q1659 178 1655.5 149.5Q1652 121 1652 95Q1652 29 1699 29Q1731 29 1763 55L1769 47Q1745 27 1715.5 8.5Q1686 -10 1647 -10ZM2001 -10Q1948 -10 1903.5 13.0Q1859 36 1832.5 81.5Q1806 127 1806 197Q1806 253 1825.0 313.5Q1844 374 1882.0 427.0Q1920 480 1975.5 513.0Q2031 546 2104 546Q2167 546 2202.0 515.5Q2237 485 2237 431Q2237 383 2199.5 341.5Q2162 300 2097.0 274.0Q2032 248 1950 248H1915Q1910 218 1910 189Q1910 99 1935.5 49.5Q1961 0 2010 0Q2067 0 2101.0 35.0Q2135 70 2153 125Q2174 119 2174 95Q2174 76 2155.5 51.0Q2137 26 2099.0 8.0Q2061 -10 2001 -10ZM1944 258Q2033 258 2083.5 307.0Q2134 356 2134 438Q2134 535 2080 535Q2050 535 2024.0 510.5Q1998 486 1977.0 445.0Q1956 404 1941.0 355.0Q1926 306 1917 258ZM2317 473Q2312 505 2298.0 515.5Q2284 526 2259 526H2249L2251 536H2401L2447 240Q2457 179 2464.0 119.5Q2471 60 2475 28H2476Q2531 85 2577.5 149.0Q2624 213 2652.5 274.5Q2681 336 2681 385Q2681 429 2653.0 445.0Q2625 461 2579 461Q2579 502 2601.0 521.5Q2623 541 2647 541Q2679 541 2697.0 519.5Q2715 498 2715 448Q2715 401 2697.5 350.0Q2680 299 2651.5 248.5Q2623 198 2589.5 151.5Q2556 105 2522.0 66.0Q2488 27 2461 0L2392 -9ZM2866 434Q2869 448 2870.5 461.5Q2872 475 2872 479Q2872 509 2846.5 517.5Q2821 526 2792 526H2784L2786 536H2969L2946 392H2948Q2968 433 2990.5 468.0Q3013 503 3044.5 524.5Q3076 546 3122 546Q3164 546 3184.0 526.5Q3204 507 3204 477Q3204 442 3183.5 421.5Q3163 401 3119 401Q3120 409 3120.0 416.5Q3120 424 3120 431Q3120 469 3109.5 490.5Q3099 512 3070 512Q3049 512 3028.0 493.5Q3007 475 2988.5 447.0Q2970 419 2957.5 389.5Q2945 360 2940 338L2868 0H2775ZM3409 -10Q3324 -10 3270.5 41.5Q3217 93 3217 197Q3217 253 3235.0 313.5Q3253 374 3290.0 427.0Q3327 480 3383.0 513.0Q3439 546 3515 546Q3568 546 3611.0 525.0Q3654 504 3679.5 458.5Q3705 413 3705 339Q3705 296 3694.0 248.5Q3683 201 3660.0 155.0Q3637 109 3602.0 72.0Q3567 35 3519.0 12.5Q3471 -10 3409 -10ZM3411 0Q3452 0 3483.0 23.5Q3514 47 3536.5 86.0Q3559 125 3573.5 172.0Q3588 219 3594.5 267.0Q3601 315 3601 356Q3601 453 3578.0 494.5Q3555 536 3509 536Q3469 536 3438.0 512.5Q3407 489 3384.5 450.0Q3362 411 3348.0 363.5Q3334 316 3327.5 268.0Q3321 220 3321 179Q3321 81 3345.5 40.5Q3370 0 3411 0Z" transform="translate(244 130) scale(.073 -.073)"/>
 </g>
+<path fill="none" stroke="#64828a" d="M34 151.5H725"/>
+<path class="rule" pathLength="100" fill="none" stroke="#db9a73" stroke-width="2.5" d="M34 151.5H213"/>
 </svg>

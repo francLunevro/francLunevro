@@ -21,14 +21,14 @@ jobs:
     steps:
       - name: Check out the public default branch
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-      - name: Regenerate cards from public GitHub data
+      - name: Refresh public project data
         env:
           PUBLIC_PROJECT_REPOSITORY: ${{ vars.PUBLIC_PROJECT_REPOSITORY }}
         run: python3 scripts/refresh.py --live
       - name: Publish changes when the data changed
         run: |
           set -euo pipefail
-          git add -- assets/hero.svg assets/stack.svg assets/activity.svg assets/languages.svg data/public-activity.json data/activity-summary.md
+          git add -- data/public-activity.json data/activity-summary.md
           if git diff --cached --quiet; then
             echo "The generated profile is up to date."
             exit 0

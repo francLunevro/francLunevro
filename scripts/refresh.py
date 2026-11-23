@@ -1,4 +1,4 @@
-"""Fetch verified public project data and rebuild the README cards."""
+"""Fetch verified public project data and rebuild the profile artwork."""
 
 import argparse
 from collections import Counter
@@ -125,7 +125,6 @@ def build_files(snapshot):
     return {
         SNAPSHOT: encoded,
         Path("data/activity-summary.md"): render.activity_summary(snapshot),
-        **render.cards(snapshot),
     }
 
 
@@ -154,7 +153,7 @@ def main():
     mode = parser.add_mutually_exclusive_group(required=True)
     mode.add_argument("--live", action="store_true", help="Refresh from GitHub's public REST API.")
     mode.add_argument("--offline", action="store_true", help="Render the checked-in public snapshot.")
-    mode.add_argument("--check", action="store_true", help="Verify the checked-in cards without writing.")
+    mode.add_argument("--check", action="store_true", help="Verify the checked-in generated files without writing.")
     parser.add_argument("--output", type=Path, default=ROOT)
     args = parser.parse_args()
     try:
@@ -165,6 +164,8 @@ def main():
         else:
             snapshot = json.loads((ROOT / SNAPSHOT).read_text(encoding="utf-8"))
         files = build_files(snapshot)
+        if not args.live:
+            files.update(render.artwork())
         if args.check:
             for relative, contents in files.items():
                 path = args.output / relative
